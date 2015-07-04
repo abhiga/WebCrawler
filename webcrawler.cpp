@@ -24,31 +24,38 @@ void onAnchorFound(char * url){
 }
 void WebCrawler::crawl()
 
-{
+{	
+	int n;
+	char * buffer;
+	while (_headURL <_tailURL) {
+		//Fetch the next URL in _headURL
+		buffer = fetchHTML(_urlArray[_headURL]._url, &n);
 
-  //while (_headURL <_tailURL) {
-    //Fetch the next URL in _headURL
-	
-    //Increment _headURL
+		//Increment _headURL
+		
+		//If the document is not text/html 
+		if(buffer == NULL) {
+			_headURL++;
+			continue;
+		}
+		parse(buffer,n);
 
-    //If the document is not text/html 
+		//Get the first 500 characters (at most) of the document without tags. Add this 
+		//  description to theURL record for this URL.
+		_urlArray[_headURL]._description = "empty";
+		_headURL++;
+		//Find all the hyperlinks of this document and add them to the
+		//_urlArray and _urlToUrlRecord if they are not already in the
+		//_urlToUrlRecord. Only insert up to _maxURL entries.
 
-          //continue;
-
-    //Get the first 500 characters (at most) of the document without tags. Add this 
-     //  description to theURL record for this URL.
-
-    //Find all the hyperlinks of this document and add them to the
-      //_urlArray and _urlToUrlRecord if they are not already in the
-      //_urlToUrlRecord. Only insert up to _maxURL entries.
-
-    //For each word in the document without tags, add the index of this URL to
-      //a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
-  //while
-	//}
+		//For each word in the document without tags, add the index of this URL to
+		//a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
+		//while
+		//}
+	}
 }
 
 int main () {
 
-return 0;
+	return 0;
 }
