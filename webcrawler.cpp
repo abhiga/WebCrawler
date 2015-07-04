@@ -12,6 +12,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
+	printf("%d\n",nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
 		printf("abhiga\n");
 		_urlArray[i]._url = strdup(initialURLs[i]);
