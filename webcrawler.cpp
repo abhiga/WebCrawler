@@ -32,7 +32,7 @@ void WebCrawler::onContentFound(char c)
 }
 void WebCrawler::onAnchorFound(char * url){
 	if(strncmp(url,"http://", strlen("http://")) == 0) {
-		//_urlArray[_tailURL]._url = strdup(url);
+		_urlArray[_tailURL]._url = strdup(url);
 		_tailURL++;
 	}
 }
@@ -52,8 +52,9 @@ void WebCrawler::crawl()
 			_headURL++;
 			continue;
 		}
-		//printf("abhiga\n");
+		printf("abhiga\n");
 		parse(buffer,n);
+		printf("gyan\n");
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
