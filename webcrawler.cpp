@@ -17,10 +17,12 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
 }
-void onContentFound(char c)
+void WebCrawler::onContentFound(char c)
 {
 }
-void onAnchorFound(char * url){
+void WebCrawler::onAnchorFound(char * url){
+	_urlArray[_tailURL]._url = strdup(url);
+	_tailURL++;
 }
 void WebCrawler::crawl()
 
