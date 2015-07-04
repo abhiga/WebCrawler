@@ -44,7 +44,7 @@ void WebCrawler::crawl()
 	while (_headURL <_tailURL) {
 		//Fetch the next URL in _headURL
 		buffer = fetchHTML(_urlArray[_headURL]._url, &n);
-
+		
 		//Increment _headURL
 		
 		//If the document is not text/html 
@@ -52,6 +52,7 @@ void WebCrawler::crawl()
 			_headURL++;
 			continue;
 		}
+		printf("abhiga\n");
 		parse(buffer,n);
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
