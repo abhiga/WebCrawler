@@ -32,7 +32,7 @@ void WebCrawler::onContentFound(char c)
 }
 void WebCrawler::onAnchorFound(char * url){
 	if(strncmp(url,"http://", strlen("http://")) == 0) {
-		_urlArray[_tailURL]._url = strdup(url);
+		//_urlArray[_tailURL]._url = strdup(url);
 		_tailURL++;
 	}
 }
@@ -57,7 +57,7 @@ void WebCrawler::crawl()
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
-		_urlArray[_headURL]._description = " ";
+		//_urlArray[_headURL]._description = " ";
 		_headURL++;
 		//Find all the hyperlinks of this document and add them to the
 		//_urlArray and _urlToUrlRecord if they are not already in the
