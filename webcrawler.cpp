@@ -24,7 +24,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 }
 void WebCrawler::onContentFound(char c)
 { 
-	_urlArray[_tailURL]._description = "empty";
+	//_urlArray[_tailURL]._description = "empty";
 	//char *d = &c;
 	//strcat(desc,d);
 	//count++;
@@ -54,6 +54,7 @@ void WebCrawler::crawl()
 		}
 		printf("abhiga\n");
 		parse(buffer,n);
+		_tailURL--;
 		//printf("gyan\n");
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
