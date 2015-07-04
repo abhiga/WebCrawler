@@ -5,7 +5,7 @@
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
 {
-	// Allocate space for _urlArray
+/*	// Allocate space for _urlArray
 	_headURL = 0;
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
@@ -16,7 +16,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
-}
+*/}
 void onContentFound(char c)
 {
 }
@@ -28,12 +28,12 @@ void WebCrawler::crawl()
 
   //while (_headURL <_tailURL) {
     //Fetch the next URL in _headURL
-
+	
     //Increment _headURL
 
     //If the document is not text/html 
 
-    //      continue;
+          //continue;
 
     //Get the first 500 characters (at most) of the document without tags. Add this 
      //  description to theURL record for this URL.
@@ -45,6 +45,7 @@ void WebCrawler::crawl()
     //For each word in the document without tags, add the index of this URL to
       //a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
   //while
+	//}
 }
 
 int main () {

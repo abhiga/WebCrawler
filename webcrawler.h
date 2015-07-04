@@ -29,8 +29,10 @@ class WebCrawler : public SimpleHTMLParser {
   HashTableTemplate<URLRecordList *> *_wordToURLRecordList; // maps a word to a list of URLs
 
  public:
+  void onContentFound(char c);
+  void onAnchorFound(char * url);
   // Create a web crawler object with the initial urls
-  WebCrawler(int maxUrls, int nurlRoots, const char ** urlRoots);
+  WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs);
   
   // crawl the web
   void crawl();
