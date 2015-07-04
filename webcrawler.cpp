@@ -53,7 +53,7 @@ void WebCrawler::crawl()
 			continue;
 		}
 		//printf("abhiga\n");
-		parse(NULL,n);
+		parse(buffer,n);
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
