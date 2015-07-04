@@ -65,7 +65,7 @@ void WebCrawler::crawl()
 		//a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
 		//while
 		//}
-		for(int i = 0; i < _maxUrls;i++)
+		for(int i = 0; i < _tailURL;i++)
 			printf("%s\n", _urlArray[i]._url);
 
 	}
