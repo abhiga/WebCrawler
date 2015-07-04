@@ -31,6 +31,8 @@ void WebCrawler::onContentFound(char c)
 	
 }
 void WebCrawler::onAnchorFound(char * url){
+	if(_tailURL >= _maxUrls)
+		return;
 	if(strncmp(url,"http://", strlen("http://")) == 0) {
 		_urlArray[_tailURL]._url = strdup(url);
 		_tailURL++;
