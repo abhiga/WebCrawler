@@ -19,6 +19,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 }
 void WebCrawler::onContentFound(char c)
 {
+	
 }
 void WebCrawler::onAnchorFound(char * url){
 	_urlArray[_tailURL]._url = strdup(url);
