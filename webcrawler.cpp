@@ -31,10 +31,10 @@ void WebCrawler::onContentFound(char c)
 	
 }
 void WebCrawler::onAnchorFound(char * url){
-	if(strncmp(url,"http://", strlen("http://")) == 0) {
+	//if(strncmp(url,"http://", strlen("http://")) == 0) {
 		_urlArray[_tailURL]._url = strdup(url);
 		_tailURL++;
-	}
+	//}
 }
 void WebCrawler::crawl()
 
