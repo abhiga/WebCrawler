@@ -9,6 +9,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 {
 	// Allocate space for _urlArray
 	_headURL = 0;
+
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
 	for (int i = 0; i < nInitialURls; i++) {
