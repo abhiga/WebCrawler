@@ -92,6 +92,7 @@ int main (int argc, char** argv) {
 				count++;
 			}
 		}
+		printf("abhiga\n");
 		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
 		//printf("abhiga\n");
 		w -> crawl();
