@@ -52,7 +52,8 @@ void WebCrawler::crawl()
 			_headURL++;
 			continue;
 		}
-		printf("abhiga\n");
+		//printf("abhiga\n");
+		if(buffer!=NULL)
 		parse(buffer,n);
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
