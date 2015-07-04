@@ -12,7 +12,6 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
-	//printf("%d\n",nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
 		printf("abhiga\n");
 		_urlArray[i]._url = strdup(initialURLs[i]);
@@ -52,11 +51,9 @@ void WebCrawler::crawl()
 			_headURL++;
 			continue;
 		}
-		printf("abhiga\n");
+		//printf("abhiga\n");
 		parse(buffer,n);
-		_tailURL--;
-		//printf("gyan\n");
-
+		
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
 		//_urlArray[_headURL]._description = " ";
@@ -79,7 +76,6 @@ void WebCrawler::crawl()
 }
 
 int main (int argc, char** argv) {
-	//printf("abhiga\n");
 	if(argc<2)
 		fprintf(stderr,"Invalid Format\n");
 	else {
