@@ -41,7 +41,7 @@ void WebCrawler::crawl()
 {	
 	int n;
 	char * buffer;
-	while (_headURL <_tailURL - 1) {
+	while (_headURL <_tailURL) {
 		//Fetch the next URL in _headURL
 		buffer = fetchHTML(_urlArray[_headURL]._url, &n);
 		
