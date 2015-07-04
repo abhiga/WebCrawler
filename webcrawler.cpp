@@ -53,15 +53,8 @@ void WebCrawler::crawl()
 			continue;
 		}
 		printf("abhiga\n");
-		parse(buffer,n);
-		printf("gyan\n");
-printf("gyan1\n");
-printf("gyan2\n");
-printf("gyan3\n");
-printf("gyan4\n");
-printf("gyan5\n");
-printf("gyan6\n");
-printf("gyan7\n");
+		//parse(buffer,n);
+		//printf("gyan\n");
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
