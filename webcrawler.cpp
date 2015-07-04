@@ -11,6 +11,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	_headURL = 0;
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
+	printf("abhiga\n");
 	for (int i = 0; i < nInitialURls; i++) {
 		_urlArray -> _url = strdup(initialURLs[i]);
 		_urlArray -> _description = NULL;
@@ -18,7 +19,6 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
-	printf("abhiga\n");
 }
 void WebCrawler::onContentFound(char c)
 { 
