@@ -62,10 +62,14 @@ void WebCrawler::crawl()
 		//a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
 		//while
 		//}
+		for(int i = 0; i < _maxUrls;i++)
+			printf("%s\n", _urlArray[i]._url);
+
 	}
 }
 
 int main (int argc, char** argv) {
-
+	WebCrawler *w = new WebCrawler(1000,1,(const char **)"http://www.purdue.edu");
+	w -> crawl();
 	return 0;
 }
