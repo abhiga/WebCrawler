@@ -71,6 +71,7 @@ void WebCrawler::crawl()
 int main (int argc, char** argv) {
 	printf("abhiga\n");
 	WebCrawler *w = new WebCrawler(1000,1,(const char **)"http://www.purdue.edu");
+		printf("abhiga\n");
 	w -> crawl();
 	return 0;
 }
