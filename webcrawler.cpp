@@ -69,9 +69,32 @@ void WebCrawler::crawl()
 }
 
 int main (int argc, char** argv) {
-	printf("abhiga\n");
-	WebCrawler *w = new WebCrawler(1000,1,(const char **)"http://www.purdue.edu");
-		printf("abhiga\n");
-	w -> crawl();
+	//printf("abhiga\n");
+	if(argc<2)
+		fprintf(stderr,"Invalid Format\n");
+	else {
+		int count = 0;
+		int maxURLs;
+		const char **initialURLs;
+		if(strcmp(argv[1],"-u") == 0) {
+			maxURLs = atoi(argv[2]);
+			initialURLs = new const char*[argc - 3];
+			for (int i = 0 ; i < argc; i++) {
+				initialURLs[i] = argv[i+3];
+				count++;
+			}
+		}
+		else {
+			maxURLs = 1000;
+			initialURLs = new const char*[argc - 1];
+			for (int i = 0 ; i < argc; i++) {
+				initialURLs[i] = argv[i+1];
+				count++;
+			}
+		}
+		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
+		//printf("abhiga\n");
+		w -> crawl();
+	}
 	return 0;
 }
