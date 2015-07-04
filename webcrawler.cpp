@@ -62,8 +62,8 @@ void WebCrawler::crawl()
 		//Find all the hyperlinks of this document and add them to the
 		//_urlArray and _urlToUrlRecord if they are not already in the
 		//_urlToUrlRecord. Only insert up to _maxURL entries.
-		if(_tailURL == _maxUrls - 1)
-			break;
+		//if(_tailURL == _maxUrls - 1)
+			//break;
 		//For each word in the document without tags, add the index of this URL to
 		//a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
 		//while
