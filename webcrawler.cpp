@@ -71,11 +71,11 @@ void WebCrawler::crawl()
 		//while
 		//}
 	}
-	/*for(int i = 0; i < _tailURL;i++) {
+	for(int i = 0; i < _tailURL;i++) {
 			printf("abhiga\n");
 			printf("%s\n", _urlArray[i]._url);
 			//printf("%s\n", _urlArray[i]._description);
-		}*/
+		}
 }
 
 int main (int argc, char** argv) {
