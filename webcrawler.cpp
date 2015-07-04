@@ -87,7 +87,7 @@ int main (int argc, char** argv) {
 		if(strcmp(argv[1],"-u") == 0) {
 			maxURLs = atoi(argv[2]);
 			initialURLs = new const char*[argc - 3];
-			for (int i = 0 ; i < argc - 1; i++) {
+			for (int i = 0 ; i < argc - 3; i++) {
 				initialURLs[i] = argv[i+3];
 				count++;
 			}
