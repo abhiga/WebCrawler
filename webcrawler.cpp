@@ -18,6 +18,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
+	printf("abhiga\n");
 }
 void WebCrawler::onContentFound(char c)
 { 
