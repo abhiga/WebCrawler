@@ -16,7 +16,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	for (int i = 0; i < nInitialURls; i++) {
 		printf("abhiga\n");
 		_urlArray[i]._url = strdup(initialURLs[i]);
-		_urlArray[i]._description = NULL;
+		_urlArray[i]._description = "empty";
 	}
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
