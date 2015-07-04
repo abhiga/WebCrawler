@@ -2,6 +2,8 @@
 #include "webcrawler.h"
 #include "SimpleHTMLParser.h"
 
+char *desc = "";
+//int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
 {
@@ -11,19 +13,24 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// insert the initialURls
 	for (int i = 0; i < nInitialURls; i++) {
 		_urlArray -> _url = strdup(initialURLs[i]);
-		_urlArray -> _description = " ";
+		_urlArray -> _description = NULL;
 	}
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
 }
 void WebCrawler::onContentFound(char c)
-{
+{ 
+	char *d = &c;
+	strcat(desc,d);
+	//count++;
 	
 }
 void WebCrawler::onAnchorFound(char * url){
-	_urlArray[_tailURL]._url = strdup(url);
-	_tailURL++;
+	if(strncmp(url,"http://", strlen("http://"))) {
+		_urlArray[_tailURL]._url = strdup(url);
+		_tailURL++;
+	}
 }
 void WebCrawler::crawl()
 
@@ -45,7 +52,7 @@ void WebCrawler::crawl()
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
-		_urlArray[_headURL]._description = "empty";
+		_urlArray[_headURL]._description = desc;
 		_headURL++;
 		//Find all the hyperlinks of this document and add them to the
 		//_urlArray and _urlToUrlRecord if they are not already in the
@@ -58,7 +65,7 @@ void WebCrawler::crawl()
 	}
 }
 
-int main () {
+int main (int argc, char** argv) {
 
 	return 0;
 }
