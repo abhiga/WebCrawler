@@ -32,7 +32,7 @@ class WebCrawler : public SimpleHTMLParser {
   void onContentFound(char c);
   void onAnchorFound(char * url);
   // Create a web crawler object with the initial urls
-  WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs);
+  WebCrawler(int maxUrls, int nurlRoots, const char ** urlRoots);
   
   // crawl the web
   void crawl();
