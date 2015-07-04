@@ -56,22 +56,23 @@ void WebCrawler::crawl()
 
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
-		_urlArray[_headURL]._description = desc;
+		_urlArray[_headURL]._description = " ";
 		_headURL++;
 		//Find all the hyperlinks of this document and add them to the
 		//_urlArray and _urlToUrlRecord if they are not already in the
 		//_urlToUrlRecord. Only insert up to _maxURL entries.
-
+		if(_tailURL == _maxUrls - 1)
+			break;
 		//For each word in the document without tags, add the index of this URL to
 		//a URLRecordList in the _wordToURLRecordList table if the URL is not already there.
 		//while
 		//}
 	}
-	for(int i = 0; i < _tailURL;i++) {
+	/*for(int i = 0; i < _tailURL;i++) {
 			printf("abhiga\n");
 			printf("%s\n", _urlArray[i]._url);
 			//printf("%s\n", _urlArray[i]._description);
-		}
+		}*/
 }
 
 int main (int argc, char** argv) {
