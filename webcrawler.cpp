@@ -5,7 +5,7 @@
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
 {
-/*	// Allocate space for _urlArray
+	// Allocate space for _urlArray
 	_headURL = 0;
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
@@ -16,7 +16,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
-*/}
+}
 void onContentFound(char c)
 {
 }
