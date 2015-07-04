@@ -14,7 +14,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// insert the initialURls
 	printf("%d\n",nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
-		//printf("abhiga\n");
+		printf("abhiga\n");
 		_urlArray[i]._url = strdup(initialURLs[i]);
 		_urlArray[i]._description = "empty";
 	}
