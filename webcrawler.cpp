@@ -89,7 +89,7 @@ void WebCrawler::onAnchorFound(char * url){
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
 			_urlArray[_tailURL]._description = strdup(desc);
-				memset(desc,0,400*sizeof(char));
+				//memset(desc,0,400*sizeof(char));
 			//count = 0;
 			_tailURL++;
 		}
