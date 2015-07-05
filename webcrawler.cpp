@@ -25,17 +25,27 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 void WebCrawler::onContentFound(char c)
 { 
 	//_urlArray[_tailURL]._description = "empty";
-	//char *d = &c;
+	//char *d = &c;ccccbbbb
 	//strcat(desc,d);
 	//count++;
 	
 }
 void WebCrawler::onAnchorFound(char * url){
+	bool flag = true;	
 	if(_tailURL >= _maxUrls)
 		return;
-	if(strncmp(url,"http://", strlen("http://")) == 0) {
-		_urlArray[_tailURL]._url = strdup(url);
-		_tailURL++;
+	//else
+	else if(strncmp(url,"http://", strlen("http://")) == 0) {
+		for (int i = 0; i< _tailURL; i++) {
+			if(strcmp(url, _urlArray[i]._url)==0) {
+				flag = false;
+				break;
+			}
+		}
+		if(flag) {
+			_urlArray[_tailURL]._url = strdup(url);
+				_tailURL++;
+		}
 	}
 }
 void WebCrawler::crawl()
@@ -72,7 +82,7 @@ void WebCrawler::crawl()
 		//}
 	}
 	for(int i = 0; i < _tailURL;i++) {
-			printf("abhiga\n");
+			//printf("abhiga\n");
 			printf("%s\n", _urlArray[i]._url);
 			//printf("%s\n", _urlArray[i]._description);
 		}
