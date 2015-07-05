@@ -27,7 +27,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 void WebCrawler::onContentFound(char c)
 { 
 	desc = (char*)malloc(100*sizeof(char));
-	desc[count];
+	desc[count] = c;
 	count++;
 	
 }
@@ -84,6 +84,7 @@ void WebCrawler::onAnchorFound(char * url){
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
 			_urlArray[_tailURL]._description = desc;
+			count = 0;
 			_tailURL++;
 		}
 		free(temp);
