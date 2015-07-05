@@ -30,6 +30,7 @@ void WebCrawler::onContentFound(char c)
 	
 }
 void WebCrawler::onAnchorFound(char * url){
+	char *finalurl;	
 	char *temp = (char *)malloc(1000*sizeof(char));
 	bool flag = true;	
 	if(_tailURL >= _maxUrls)
@@ -75,7 +76,7 @@ void WebCrawler::onAnchorFound(char * url){
 		if (flag) 
 			strcat(strcat(temp,"/"),url);
 	}*/
-	char *finalurl;
+	//char *finalurl;
 	for (int i = 0; i< _tailURL; i++) {
 			//checking if the URL already exists in URL array
 			finalurl = strdup(temp);
