@@ -52,8 +52,9 @@ void WebCrawler::onAnchorFound(char * url){
 	else if(strncmp(url,"//",strlen("//")) == 0) {
 		temp = strdup("http:");
 		strcat(temp,url);
-		_urlArray[_tailURL]._url = temp;
+		_urlArray[_tailURL]._url = strdup(temp);
 		_tailURL++;
+		free(temp);
 	}
 	/*else if(url[0]=='/') {
 		char *temp = strdup(_urlArray[_tailURL - 1]._url);
