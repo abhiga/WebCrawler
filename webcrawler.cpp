@@ -3,7 +3,6 @@
 #include "SimpleHTMLParser.h"
 
 char *desc;
-char *temp;
 //int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
@@ -50,7 +49,8 @@ void WebCrawler::onAnchorFound(char * url){
 		}
 	}
 	else if(strncmp(url,"//",strlen("//")) == 0) {
-		temp = strdup("http:");
+		char *temp = (char *)malloc(1000*sizeof(char));
+		strcat(temp,"http:");
 		strcat(temp,url);
 		_urlArray[_tailURL]._url = strdup(temp);
 		_tailURL++;
