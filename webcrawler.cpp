@@ -128,7 +128,7 @@ void WebCrawler::crawl()
 		//while
 		//}
 	}
-	for(int i = 0; i < _headURL;i++) {
+	for(int i = 0; i < _tailURL;i++) {
 			printf("%s\n", _urlArray[i]._url);
 			printf("%s\n", _urlArray[i]._description);
 		}
