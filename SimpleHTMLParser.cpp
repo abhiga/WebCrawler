@@ -21,7 +21,7 @@ bool
 SimpleHTMLParser::parse(char * buffer, int n)
 {
 	enum { START, TAG, SCRIPT, ANCHOR, HREF,
-	       COMMENT, FRAME, SRC } state;
+	       COMMENT, FRAME, SRC, TITLE, META } state;
 
 	state = START;
 	
