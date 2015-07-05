@@ -30,7 +30,7 @@ void WebCrawler::onContentFound(char c)
 	
 }
 void WebCrawler::onAnchorFound(char * url){
-
+	char *temp = (char *)malloc(1000*sizeof(char));
 	bool flag = true;	
 	if(_tailURL >= _maxUrls)
 		return;
@@ -50,7 +50,7 @@ void WebCrawler::onAnchorFound(char * url){
 		}
 	}
 	else if(strncmp(url,"//",strlen("//")) == 0) {
-		char *temp = (char *)malloc(1000*sizeof(char));
+		//char *temp = (char *)malloc(1000*sizeof(char));
 		strcpy(temp,"http:");
 		strcat(temp,url);
 		_urlArray[_tailURL]._url = strdup(temp);
@@ -58,7 +58,7 @@ void WebCrawler::onAnchorFound(char * url){
 		free(temp);
 	}
 	else if(strncmp(url,"/",strlen("/")) == 0) {
-		char *temp = (char *)malloc(1000*sizeof(char));
+		//char *temp = (char *)malloc(1000*sizeof(char));
 		strcpy(temp, _urlArray[_headURL]._url);
 		for(int i = 10; i < strlen(temp); i++) {
 			if(temp[i] == '/') {
