@@ -32,6 +32,7 @@ void WebCrawler::onContentFound(char c)
 void WebCrawler::onAnchorFound(char * url){
 	char *finalurl;	
 	char *temp = (char *)malloc(1000*sizeof(char));
+	memset(temp,0,1000*sizeof(char));
 	bool flag = true;	
 	if(_tailURL >= _maxUrls)
 		return;
