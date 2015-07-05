@@ -48,7 +48,7 @@ void WebCrawler::onAnchorFound(char * url){
 			_tailURL++;
 		}
 	}
-	else if(url[0]=='/'&&url[1]!='/') {
+	else if(url[0]=='/') {
 		char *temp = strdup(_urlArray[_tailURL - 1]._url);
 		for(int i = 10; i < strlen(temp); i++) {
 			if(temp[i] == '/') {
