@@ -110,7 +110,7 @@ void WebCrawler::crawl()
 		count = 0;
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
-		_urlArray[_headURL]._description = "empty";
+		//_urlArray[_headURL]._description = "empty";
 		_headURL++;
 		//Find all the hyperlinks of this document and add them to the
 		//_urlArray and _urlToUrlRecord if they are not already in the
@@ -122,7 +122,7 @@ void WebCrawler::crawl()
 		//while
 		//}
 	}
-	for(int i = 0; i < _headURL;i++) {
+	for(int i = 0; i < _tailURL;i++) {
 			printf("%s\n", _urlArray[i]._url);
 			printf("%s\n", _urlArray[i]._description);
 		}
