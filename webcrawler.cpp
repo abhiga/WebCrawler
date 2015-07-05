@@ -52,7 +52,7 @@ void WebCrawler::onAnchorFound(char * url){
 				break;
 			}
 		}
-		printf("abhiga\n");
+		//printf("abhiga\n");
 		strcat(temp,url);
 		
 	}
@@ -62,7 +62,8 @@ void WebCrawler::onAnchorFound(char * url){
 			if(temp[i] =='/') {
 				temp[i+1] = '\0';
 				//strcat(temp,"/");
-				strcat(temp,url);	
+				strcat(temp,url);
+				printf("abhiga\n");	
 				break;
 			}
 		}
