@@ -54,12 +54,12 @@ void WebCrawler::onAnchorFound(char * url){
 		//bool flag1 = true;
 		char *temp = strdup(_urlArray[_tailURL-1]._url);
 		for(int i = strlen(temp) - 1; i > 8; i--) {
-			if(temp[i] =='/') {
+			/*if(temp[i] =='/') {
 				temp[i+1] = '\0';
 				strcat(temp,url);
 				flag = false;	
 				break;
-			}
+			}*/
 		}
 		if (flag) 
 			strcat(strcat(temp,"/"),url);
