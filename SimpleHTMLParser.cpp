@@ -71,7 +71,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		case TITLE : {
 			if (match(&b, "</TITLE>")){
 				state = START;
-				onContentFound('/0');
+				onContentFound('*');
 			}
 			else {
 				onContentFound(*b);

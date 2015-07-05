@@ -25,8 +25,10 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
     _wordToURLRecordList = new HashTableTemplate<URLRecordList*>();
 }
 void WebCrawler::onContentFound(char c)
-{ 
+{ 	
+	if(c != '*')
 	desc[count] = c;
+	else desc[count] = '\0';
 	count++;
 	
 }
