@@ -58,7 +58,7 @@ void WebCrawler::onAnchorFound(char * url){
 	}
 	else if(strncmp(url,"/",strlen("/")) == 0) {
 		char *temp = (char *)malloc(1000*sizeof(char));
-		strcpy(temp, _urlArray[_tailURL - 1]._url);
+		strcpy(temp, _urlArray[_headURL]._url);
 		for(int i = 10; i < strlen(temp); i++) {
 			if(temp[i] == '/') {
 				temp[i] = '\0';
