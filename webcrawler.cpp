@@ -35,7 +35,7 @@ void WebCrawler::onAnchorFound(char * url){
 	if(_tailURL >= _maxUrls)
 		return;
 	//check if the absolute URL starts with http
-	else if(strncmp(url,"http", strlen("http")) == 0) {
+	else if(strncmp(url,"http://", strlen("http://")) == 0) {
 		for (int i = 0; i< _tailURL; i++) {
 			//checking if the URL already exists in URL array
 			if(strcmp(url, _urlArray[i]._url)==0) {
