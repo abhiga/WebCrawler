@@ -23,7 +23,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 }
 void WebCrawler::onContentFound(char c)
 { 	
-	while (count++ < 50) {
+	/*while (count++ < 50) {
 		desc[count] = c;
 	}
 	if(count == 50)
@@ -32,7 +32,7 @@ void WebCrawler::onContentFound(char c)
 	//char *d = &c;ccccbbbb
 	//strcat(desc,d);
 	//count++;
-	
+	*/
 }
 void WebCrawler::onAnchorFound(char * url){
 	char *finalurl;	
