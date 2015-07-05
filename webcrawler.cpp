@@ -61,7 +61,7 @@ void WebCrawler::onAnchorFound(char * url){
 		for(int i = strlen(temp)-1; i > 8; i--) {
 			if(temp[i] =='/') {
 				temp[i+1] = '\0';
-				strcat(temp,"/");
+				//strcat(temp,"/");
 				strcat(temp,url);	
 				break;
 			}
