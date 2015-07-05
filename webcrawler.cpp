@@ -46,7 +46,6 @@ void WebCrawler::onAnchorFound(char * url){
 		//_urlArray[_tailURL]._url = strdup(temp);
 		//_tailURL++;
 		//free(temp);
-		printf("abhiga\n");
 	}
 	else if(strncmp(url,"/",strlen("/")) == 0) {
 		//char *temp = (char *)malloc(1000*sizeof(char));
@@ -57,6 +56,7 @@ void WebCrawler::onAnchorFound(char * url){
 				break;
 			}
 		}
+		printf("abhiga\n");
 		strcat(temp,url);
 		//_urlArray[_tailURL]._url = strdup(temp);
 		//_tailURL++;
