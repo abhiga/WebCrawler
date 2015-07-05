@@ -77,6 +77,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				onContentFound(*b);
 				b++;
 			}
+			break;
 		}
 		case ANCHOR: {
 			if (match(&b,"href=\"")) {
