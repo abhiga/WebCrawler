@@ -56,18 +56,18 @@ void WebCrawler::onAnchorFound(char * url){
 		strcat(temp,url);
 		
 	}
-	else if((('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) && (strncmp(url,"https://",(strlen("https://"))) !=0) && (strncmp(url,"ftp://",(strlen("ftp://"))) !=0)&& (strncmp(url,"mailto:",(strlen("mailto:"))) !=0)) {
+	/*else if((('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) && (strncmp(url,"https://",(strlen("https://"))) !=0) && (strncmp(url,"ftp://",(strlen("ftp://"))) !=0)&& (strncmp(url,"mailto:",(strlen("mailto:"))) !=0)) {
 		strcpy(temp, _urlArray[_headURL]._url);
 		for(int i = strlen(temp)-1; i > 8; i--) {
 			if(temp[i] =='/') {
 				temp[i+1] = '\0';
 				//strcat(temp,"/");
 				strcat(temp,url);
-				printf("abhiga\n");	
+				//printf("abhiga\n");	
 				break;
 			}
 		}
-	}
+	}*/
 	for (int i = 0; i< _tailURL; i++) {
 			//checking if the URL already exists in URL array
 			if(temp[strlen(temp)-1] =='/')
