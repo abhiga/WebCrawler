@@ -23,6 +23,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 }
 void WebCrawler::onContentFound(char c)
 { 
+	printf("%c", c);
 	//_urlArray[_tailURL]._description = "empty";
 	//char *d = &c;ccccbbbb
 	//strcat(desc,d);
