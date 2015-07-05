@@ -2,7 +2,7 @@
 #include "webcrawler.h"
 #include "SimpleHTMLParser.h"
 
-char *desc = (char*)malloc(100*sizeof(char));
+char *desc = (char*)malloc(10000*sizeof(char));
 int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
@@ -27,8 +27,9 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 void WebCrawler::onContentFound(char c)
 { 	
 	if(c != '*')
-	desc[count] = c;
-	else desc[count] = '\0';
+		desc[count] = c;
+	else 
+		desc[count] = '\0';
 	count++;
 	
 }
