@@ -56,8 +56,9 @@ void WebCrawler::onAnchorFound(char * url){
 		_tailURL++;
 		free(temp);
 	}
-	/*else if(url[0]=='/') {
-		char *temp = strdup(_urlArray[_tailURL - 1]._url);
+	else if(strncmp(url,"/",strlen("/")) == 0) {
+		char *temp = (char *)malloc(1000*sizeof(char));
+		strcpy(temp, _urlArray[_tailURL - 1]._url);
 		for(int i = 10; i < strlen(temp); i++) {
 			if(temp[i] == '/') {
 				temp[i] = '\0';
@@ -65,10 +66,11 @@ void WebCrawler::onAnchorFound(char * url){
 			}
 		}
 		strcat(temp,url);
-		_urlArray[_tailURL]._url = temp;
+		_urlArray[_tailURL]._url = strdup(temp);
 		_tailURL++;
+		free(temp);
 		
-	}*/
+	}
 	//check if the URL is absolute
 	/*else if(('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) {
 		char *temp = strdup(_urlArray[_tailURL-1]._url);
