@@ -34,18 +34,35 @@ void WebCrawler::onAnchorFound(char * url){
 	bool flag = true;	
 	if(_tailURL >= _maxUrls)
 		return;
-	//else
-	else if(strncmp(url,"http://", strlen("http://")) == 0) {
+	//check if the absolute URL starts with http
+	else if(strncmp(url,"http", strlen("http")) == 0) {
 		for (int i = 0; i< _tailURL; i++) {
+			//checking if the URL already exists in URL array
 			if(strcmp(url, _urlArray[i]._url)==0) {
 				flag = false;
 				break;
 			}
 		}
 		if(flag) {
+			//inserting this absolute URL
 			_urlArray[_tailURL]._url = strdup(url);
 				_tailURL++;
 		}
+	}
+	//check if the URL is absolute
+	else if(('a' < url[0] && url[0] < 'z')||('A' < url[0] && url[0] < 'Z')) {
+		//bool flag1 = true;
+		char *temp = strdup(_urlArray[_tailURL-1]._url);
+		for(int i = strlen(temp) - 1; i > 8; i--) {
+			if(temp[i] =='/') {
+				temp[i+1] = '\0';
+				strcat(temp,url);
+				flag = false;	
+				break;
+			}
+		}
+		if (flag) 
+			strcat(strcat(temp,"/"),url);
 	}
 }
 void WebCrawler::crawl()
@@ -111,9 +128,9 @@ int main (int argc, char** argv) {
 				count++;
 			}
 		}
-		printf("abhiga\n");
+		//printf("abhiga\n");
 		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
-		printf("abhiga\n");
+		//printf("abhiga\n");
 		w -> crawl();
 	}
 	return 0;
