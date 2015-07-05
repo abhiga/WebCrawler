@@ -2,8 +2,8 @@
 #include "webcrawler.h"
 #include "SimpleHTMLParser.h"
 
-char *desc;
-//int count = 0;
+char *desc = (char*)malloc(51*sizeof(char));
+int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
 {
@@ -22,8 +22,12 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	_tailURL = nInitialURls;
 }
 void WebCrawler::onContentFound(char c)
-{ 
-	printf("%c", c);
+{ 	
+	while (count++ < 50) {
+		desc[count] = c;
+	}
+	if(count == 50)
+	desc[50] = '\0';
 	//_urlArray[_tailURL]._description = "empty";
 	//char *d = &c;ccccbbbb
 	//strcat(desc,d);
@@ -103,10 +107,10 @@ void WebCrawler::crawl()
 			continue;
 		}
 		parse(buffer,n);
-		
+		count = 0;
 		//Get the first 500 characters (at most) of the document without tags. Add this 
 		//  description to theURL record for this URL.
-		//_urlArray[_headURL]._description = " ";
+		_urlArray[_headURL]._description = desc;
 		_headURL++;
 		//Find all the hyperlinks of this document and add them to the
 		//_urlArray and _urlToUrlRecord if they are not already in the
