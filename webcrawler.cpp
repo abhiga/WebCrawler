@@ -26,11 +26,14 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 }
 void WebCrawler::onContentFound(char c)
 { 	
-	if(c != '*')
+	if(c != '*'){
 		desc[count] = c;
-	else 
+		count++;
+	}
+	else {
 		desc[count] = '\0';
-	count++;
+		count = 0;
+	}
 	
 }
 void WebCrawler::onAnchorFound(char * url){
@@ -87,7 +90,7 @@ void WebCrawler::onAnchorFound(char * url){
 			_urlArray[_tailURL]._url = finalurl;
 			_urlArray[_tailURL]._description = strdup(desc);
 				memset(desc,0,400*sizeof(char));
-			count = 0;
+			//count = 0;
 			_tailURL++;
 		}
 		free(temp);
