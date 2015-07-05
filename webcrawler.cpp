@@ -45,7 +45,7 @@ void WebCrawler::onAnchorFound(char * url){
 		if(flag) {
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = strdup(url);
-				_tailURL++;
+			_tailURL++;
 		}
 	}
 	else if(url[0]=='/'&&url[1]!='/') {
@@ -57,6 +57,9 @@ void WebCrawler::onAnchorFound(char * url){
 			}
 		}
 		strcat(temp,url);
+		_urlArray[_tailURL]._url = temp;
+		_tailURL++;
+		
 	}
 	//check if the URL is absolute
 	/*else if(('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) {
