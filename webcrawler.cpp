@@ -20,6 +20,9 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
+	
+	_urlToUrlRecord = new HashTableTemplate<int>();
+    _wordToURLRecordList = new HashTableTemplate<URLRecordList*>();
 }
 void WebCrawler::onContentFound(char c)
 { 
