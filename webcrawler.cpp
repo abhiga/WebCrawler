@@ -14,7 +14,6 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	// insert the initialURls
 	printf("%d\n", nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
-		//printf("abhiga\n");
 		_urlArray[i]._url = strdup(initialURLs[i]);
 		//_urlArray[i]._description = "empty";
 	}
@@ -51,7 +50,6 @@ void WebCrawler::onAnchorFound(char * url){
 	}
 	//check if the URL is absolute
 	else if(('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) {
-		//bool flag1 = true;
 		char *temp = strdup(_urlArray[_tailURL-1]._url);
 		for(int i = 15; i > 8; i--) {
 			if(temp[i] =='/') {
@@ -81,7 +79,6 @@ void WebCrawler::crawl()
 			_headURL++;
 			continue;
 		}
-		//printf("abhiga\n");
 		parse(buffer,n);
 		
 		//Get the first 500 characters (at most) of the document without tags. Add this 
@@ -99,7 +96,6 @@ void WebCrawler::crawl()
 		//}
 	}
 	for(int i = 0; i < _tailURL;i++) {
-			//printf("abhiga\n");
 			printf("%s\n", _urlArray[i]._url);
 			//printf("%s\n", _urlArray[i]._description);
 		}
@@ -128,9 +124,7 @@ int main (int argc, char** argv) {
 				count++;
 			}
 		}
-		//printf("abhiga\n");
 		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
-		//printf("abhiga\n");
 		w -> crawl();
 	}
 	return 0;
