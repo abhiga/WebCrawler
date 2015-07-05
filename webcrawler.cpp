@@ -30,45 +30,35 @@ void WebCrawler::onContentFound(char c)
 	
 }
 void WebCrawler::onAnchorFound(char * url){
+	char *finalurl = (char*)malloc(1000*sizeof(char));
 	bool flag = true;	
 	if(_tailURL >= _maxUrls)
 		return;
 	//check if the absolute URL starts with http
 	else if(strncmp(url,"http://", strlen("http://")) == 0) {
-		for (int i = 0; i< _tailURL; i++) {
-			//checking if the URL already exists in URL array
-			if(strcmp(url, _urlArray[i]._url)==0) {
-				flag = false;
-				break;
-			}
-		}
-		if(flag) {
-			//inserting this absolute URL
-			_urlArray[_tailURL]._url = strdup(url);
-			_tailURL++;
-		}
+		finalurl = url;
 	}
 	else if(strncmp(url,"//",strlen("//")) == 0) {
-		char *temp = (char *)malloc(1000*sizeof(char));
-		strcpy(temp,"http:");
-		strcat(temp,url);
-		_urlArray[_tailURL]._url = strdup(temp);
-		_tailURL++;
-		free(temp);
+		//char *temp = (char *)malloc(1000*sizeof(char));
+		strcpy(finalurl,"http:");
+		strcat(finalurl,url);
+		//_urlArray[_tailURL]._url = strdup(temp);
+		//_tailURL++;
+		//free(temp);
 	}
 	else if(strncmp(url,"/",strlen("/")) == 0) {
-		char *temp = (char *)malloc(1000*sizeof(char));
-		strcpy(temp, _urlArray[_headURL]._url);
-		for(int i = 10; i < strlen(temp); i++) {
-			if(temp[i] == '/') {
-				temp[i] = '\0';
+		//char *finalurl = (char *)malloc(1000*sizeof(char));
+		strcpy(finalurl, _urlArray[_headURL]._url);
+		for(int i = 10; i < strlen(finalurl); i++) {
+			if(finalurl[i] == '/') {
+				finalurl[i] = '\0';
 				break;
 			}
 		}
-		strcat(temp,url);
-		_urlArray[_tailURL]._url = strdup(temp);
-		_tailURL++;
-		free(temp);
+		strcat(finalurl,url);
+		//_urlArray[_tailURL]._url = strdup(temp);
+		//_tailURL++;
+		//free(temp);
 		
 	}
 	//check if the URL is absolute
@@ -85,6 +75,19 @@ void WebCrawler::onAnchorFound(char * url){
 		if (flag) 
 			strcat(strcat(temp,"/"),url);
 	}*/
+	for (int i = 0; i< _tailURL; i++) {
+			//checking if the URL already exists in URL array
+			if(strcmp(finalurl, _urlArray[i]._url)==0) {
+				flag = false;
+				break;
+			}
+		}
+		if(flag) {
+			//inserting this absolute URL
+			_urlArray[_tailURL]._url = strdup(finalurl);
+			_tailURL++;
+			free(finalurl);
+		}
 }
 void WebCrawler::crawl()
 
