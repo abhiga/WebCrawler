@@ -85,6 +85,7 @@ void WebCrawler::onAnchorFound(char * url){
 		if(flag) {
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
+			_urlArray[_tailURL]._description = "empty\n";
 			_tailURL++;
 		}
 		free(temp);
@@ -123,7 +124,7 @@ void WebCrawler::crawl()
 	}
 	for(int i = 0; i < _headURL;i++) {
 			printf("%s\n", _urlArray[i]._url);
-			//printf("%s\n", _urlArray[i]._description);
+			printf("%s\n", _urlArray[i]._description);
 		}
 }
 
