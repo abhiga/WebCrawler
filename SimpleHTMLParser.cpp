@@ -44,6 +44,9 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<FRAME ")) {
 				state = FRAME;
 			}
+			else if (match(&b,"<TITLE>")) {
+				state = TITLE;
+			}
 			else if	(match(&b,"<")) {
 				state = TAG;
 			}
@@ -52,18 +55,26 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				//Substitute one or more blank chars with a single space
 				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
 					if (!lastCharSpace) {
-						onContentFound(' ');
+						//onContentFound(' ');
 					}
 					lastCharSpace = true;
 				}
 				else {
-					onContentFound(c);
+					//onContentFound(c);
 					lastCharSpace = false;
 				}
 				
 				b++;
 			}
 			break;
+		}
+		case TITLE : {
+			if (match(&b, "</TITLE>"))
+				state = START;
+			else {
+				onContentFound(*b);
+				b++;
+			}
 		}
 		case ANCHOR: {
 			if (match(&b,"href=\"")) {
