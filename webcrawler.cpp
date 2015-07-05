@@ -150,7 +150,7 @@ int main (int argc, char** argv) {
 				count++;
 			}
 		}
-		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
+		WebCrawler *w = new WebCrawler(maxURLs+1,count,initialURLs);
 		w -> crawl();
 	}
 	return 0;
