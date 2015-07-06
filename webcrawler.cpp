@@ -9,20 +9,20 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 {
 	// Allocate space for _urlArray
 	_headURL = 0;
-
+    _urlToUrlRecord = new HashTableTemplate<int>();
+    _wordToURLRecordList = new HashTableTemplate<URLRecordList*>();
 	_urlArray = new URLRecord[maxUrls];
 	// insert the initialURls
 	printf("%d\n", nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
 		_urlArray[i]._url = strdup(initialURLs[i]);
 		//_urlArray[i]._description = "empty";
+		_urlToUrlRecord -> insert(_urlArray[i]._url, i);
 	}
 	// Update _maxUrls, _headURL and _tailURL
 	_maxUrls = maxUrls;
 	_tailURL = nInitialURls;
 	
-	_urlToUrlRecord = new HashTableTemplate<int>();
-    _wordToURLRecordList = new HashTableTemplate<URLRecordList*>();
 }
 void WebCrawler::onContentFound(char c)
 { 	
@@ -60,7 +60,6 @@ void WebCrawler::onAnchorFound(char * url){
 				break;
 			}
 		}
-		//printf("abhiga\n");
 		strcat(temp,url);
 		
 	}
@@ -90,6 +89,7 @@ void WebCrawler::onAnchorFound(char * url){
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
 			_urlArray[_tailURL]._description = "";
+			_urlToUrlRecord -> insert(finalurl,_tailURL);
 				//memset(desc,0,400*sizeof(char));
 			//count = 0;
 			_tailURL++;
