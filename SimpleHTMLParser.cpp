@@ -47,7 +47,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			//else if (match(&b,"<TITLE>")) {
 				//state = TITLE;
 			//}
-			else if (match(&b,"<META ")) {
+			else if (match(&b,"<meta")) {
 				state = META;
 			}
 			else if	(match(&b,"<")) {
@@ -72,7 +72,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			break;
 		}
 		case META: {
-			if (match(&b,">")) {
+			if (match(&b,"/>")) {
 				state = START;
 				onContentFound('*');
 			}			
