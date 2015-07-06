@@ -2,7 +2,7 @@
 #include "SimpleHTMLParser.h"
 #include "openhttp.h"
 #include <string.h>
-
+//int count = 0;
 SimpleHTMLParser::SimpleHTMLParser()
 {
 }
@@ -47,6 +47,9 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<TITLE>")) {
 				state = TITLE;
 			}
+			else if (match(&b,"<META ")) {
+				state = META;
+			}
 			else if	(match(&b,"<")) {
 				state = TAG;
 			}
@@ -64,6 +67,17 @@ SimpleHTMLParser::parse(char * buffer, int n)
 					lastCharSpace = false;
 				}
 				
+				b++;
+			}
+			break;
+		}
+		case META: {
+			if (match(&b,">")) {
+				state = START;
+				onContentFound('*');
+			}			
+			else {
+				onContentFound(*b);
 				b++;
 			}
 			break;
