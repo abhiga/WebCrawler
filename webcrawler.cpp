@@ -33,7 +33,10 @@ void WebCrawler::onContentFound(char c)
 	else {
 		desc[count] = '\0';
 		count = 0;
-		_urlArray[_headURL]._description = strdup(desc);
+		if(desc!=NULL)
+			_urlArray[_headURL]._description = strdup(desc);
+		else
+			_urlArray[_headURL]._description = "";				
 	}
 	
 }
