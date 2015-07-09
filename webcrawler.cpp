@@ -29,6 +29,7 @@ void WebCrawler::onContentFound(char c)
 	if(c != '*'){
 		desc[count] = c;
 		count++;
+		printf("abhiga/n");
 	}
 	else {
 		desc[count] = '\0';
