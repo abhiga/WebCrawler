@@ -82,7 +82,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 		case META: {
-			if (match(&b,"/>")) {
+			if (match(&b,">")) {
 				state = START;
 				//onContentFound('*');
 			}			
