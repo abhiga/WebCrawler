@@ -29,11 +29,12 @@ void WebCrawler::onContentFound(char c)
 	if(c != '*'){
 		desc[count] = c;
 		count++;
-		printf("abhiga/n");
+		
 	}
 	else {
 		desc[count] = '\0';
 		count = 0;
+		printf("abhiga\n");
 		if(desc!=NULL)
 			_urlArray[_headURL]._description = strdup(desc);
 		else
