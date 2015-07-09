@@ -39,7 +39,7 @@ void WebCrawler::onContentFound(char c)
 			_urlArray[_headURL]._description = strdup(desc);
 		}
 		else
-			_urlArray[_headURL]._description = "null";				
+			_urlArray[_headURL]._description = strdup("null");				
 	}
 	
 }
