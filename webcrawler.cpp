@@ -34,11 +34,12 @@ void WebCrawler::onContentFound(char c)
 	else {
 		desc[count] = '\0';
 		count = 0;
-		printf("abhiga\n");
-		if(desc!=NULL)
+		if(desc!=NULL) {
+			printf("abhiga\n");
 			_urlArray[_headURL]._description = strdup(desc);
+		}
 		else
-			_urlArray[_headURL]._description = "";				
+			_urlArray[_headURL]._description = "null";				
 	}
 	
 }
