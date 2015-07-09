@@ -41,9 +41,6 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<A ")) {
 				state = ANCHOR;
 			}
-			else if (match(&b,"</HEAD>")) {
-				onContentFound('*');
-			}
 			else if (match(&b,"<FRAME ")) {
 				state = FRAME;
 			}
@@ -52,6 +49,9 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			//}
 			else if (match(&b,"<META ")) {
 				state = META;
+			}
+			else if (match(&b,"</HEAD>")) {
+				onContentFound('*');
 			}
 			else if	(match(&b,"<")) {
 				state = TAG;
