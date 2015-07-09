@@ -50,7 +50,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<META ")) {
 				state = META;
 			}
-			else if (match(&b,"</HEAD>")) {
+			else if (match(&b,"<BODY>")) {
 				onContentFound('*');
 			}
 			else if	(match(&b,"<")) {
