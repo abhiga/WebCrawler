@@ -16,7 +16,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	printf("%d\n", nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
 		_urlArray[i]._url = strdup(initialURLs[i]);
-		//_urlArray[i]._description = "";
+		_urlArray[i]._description = "";
 		_urlToUrlRecord -> insertItem(_urlArray[i]._url, i);
 	}
 	// Update _maxUrls, _headURL and _tailURL
@@ -95,7 +95,7 @@ void WebCrawler::onAnchorFound(char * url){
 		if(flag) {
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
-			_urlArray[_tailURL]._description = "";
+			//_urlArray[_tailURL]._description = "";
 			_urlToUrlRecord -> insertItem(finalurl,_tailURL);
 				//memset(desc,0,400*sizeof(char));
 			//count = 0;
