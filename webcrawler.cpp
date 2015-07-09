@@ -25,7 +25,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	
 }
 void WebCrawler::onContentFound(char c)
-{ 	
+{ 	printf("%c",c);
 	if(c != '*'){
 		desc[count] = c;
 		count++;
