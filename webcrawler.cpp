@@ -94,7 +94,7 @@ void WebCrawler::onAnchorFound(char * url){
 		if(flag) {
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
-			//_urlArray[_tailURL]._description = "";
+			_urlArray[_tailURL]._description = "";
 			_urlToUrlRecord -> insertItem(finalurl,_tailURL);
 				//memset(desc,0,400*sizeof(char));
 			//count = 0;
