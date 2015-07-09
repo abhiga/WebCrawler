@@ -35,7 +35,7 @@ void WebCrawler::onContentFound(char c)
 		desc[count] = '\0';
 		count = 0;
 		if(desc!=NULL) {
-			printf("abhiga\n");
+			//printf("abhiga\n");
 			_urlArray[_headURL]._description = strdup(desc);
 		}
 		else
