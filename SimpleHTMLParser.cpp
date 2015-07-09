@@ -97,6 +97,14 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				state = START;
 				//onContentFound('*');
 			}
+			if (match(&b,"\" >")) {
+				state = START;
+				//onContentFound('*');
+			}
+			if (match(&b,"\"/>")) {
+				state = START;
+				//onContentFound('*');
+			}
 			else if(match(&b,">")) {
 				state = START;
 				//onContentFound('*');
@@ -230,8 +238,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 	}
-}
 
+}
 void
 SimpleHTMLParser::onContentFound(char c) {
 }
