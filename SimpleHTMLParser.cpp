@@ -53,9 +53,9 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<META NAME=\"description\" content=\"")) {
 				state = METAKEY;
 			}
-			//else if (match(&b,"<META CONTENT=\"")) {
-				//state = META;
-			//}
+			else if (match(&b,"<META CONTENT=\"")) {
+				state = META;
+			}
 			else if (match(&b,"</HEAD>")) {
 				onContentFound('*');
 			}
@@ -94,14 +94,6 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		case METAKEY: {
 			if (match(&b,"\" />")) {
-				state = START;
-				//onContentFound('*');
-			}
-			if (match(&b,"\" >")) {
-				state = START;
-				//onContentFound('*');
-			}
-			if (match(&b,"\"/>")) {
 				state = START;
 				//onContentFound('*');
 			}
@@ -238,8 +230,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 	}
-
 }
+
 void
 SimpleHTMLParser::onContentFound(char c) {
 }
