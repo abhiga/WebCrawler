@@ -3,6 +3,7 @@
 #include "SimpleHTMLParser.h"
 
 char *desc = (char*)malloc(10000*sizeof(char));
+char * temp = (char*) malloc(2*sizeof(char));
 int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
@@ -25,7 +26,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	
 }
 void WebCrawler::onContentFound(char c)
-{ 	printf("%c",c);
+{ 	//printf("%c",c);
 	if(c != '*'){
 		desc[count] = c;
 		count++;
@@ -38,10 +39,21 @@ void WebCrawler::onContentFound(char c)
 			//printf("abhiga\n");
 			_urlArray[_headURL]._description = strdup(desc);
 		}
-		else
-			_urlArray[_headURL]._description = strdup("null");				
+		//else
+			//_urlArray[_headURL]._description = strdup("null");				
 	}
-	
+/*	
+	temp[0] = c;
+	temp[1] = '\0';
+	if(count == 0) {
+		strcpy(desc, temp);
+		count++;
+	}
+	else {
+		strcat(desc, temp);
+		count++;
+	}
+*/	
 }
 void WebCrawler::onAnchorFound(char * url){
 	char *finalurl;	

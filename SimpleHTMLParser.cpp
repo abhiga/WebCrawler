@@ -41,6 +41,9 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<A ")) {
 				state = ANCHOR;
 			}
+			else if (match(&b,"</HEAD>")) {
+				onContentFound('*');
+			}
 			else if (match(&b,"<FRAME ")) {
 				state = FRAME;
 			}
@@ -71,10 +74,11 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			}
 			break;
 		}
+		
 		case META: {
 			if (match(&b,"/>")) {
 				state = START;
-				onContentFound('*');
+				//onContentFound('*');
 			}			
 			else {
 				onContentFound(*b);
@@ -85,7 +89,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		case TITLE : {
 			if (match(&b, "</TITLE>")){
 				state = START;
-				onContentFound('*');
+				//onContentFound('*');
 			}
 			else {
 				onContentFound(*b);
