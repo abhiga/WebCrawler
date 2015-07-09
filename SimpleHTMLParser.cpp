@@ -87,7 +87,19 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				//onContentFound('*');
 			}			
 			else {
-				onContentFound(*b);
+				char c = *b;
+				//Substitute one or more blank chars with a single space
+				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+					if (!lastCharSpace) {
+						onContentFound(' ');
+					}
+					lastCharSpace = true;
+				}
+				else {
+					onContentFound(c);
+					lastCharSpace = false;
+				}
+				
 				b++;
 			}
 			break;
@@ -118,7 +130,19 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				//onContentFound('*');
 			}			
 			else {
-				onContentFound(*b);
+				char c = *b;
+				//Substitute one or more blank chars with a single space
+				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+					if (!lastCharSpace) {
+						onContentFound(' ');
+					}
+					lastCharSpace = true;
+				}
+				else {
+					onContentFound(c);
+					lastCharSpace = false;
+				}
+				
 				b++;
 			}
 			break;
@@ -140,7 +164,19 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				//onContentFound('*');
 			}
 			else {
-				onContentFound(*b);
+				char c = *b;
+				//Substitute one or more blank chars with a single space
+				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+					if (!lastCharSpace) {
+						onContentFound(' ');
+					}
+					lastCharSpace = true;
+				}
+				else {
+					onContentFound(c);
+					lastCharSpace = false;
+				}
+				
 				b++;
 			}
 			break;
