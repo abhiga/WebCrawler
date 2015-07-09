@@ -97,10 +97,10 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				state = START;
 				//onContentFound('*');
 			}
-			else if(match(&b,">")) {
-				state = START;
+			//else if(match(&b,">")) {
+				//state = START;
 				//onContentFound('*');
-			}			
+			//}			
 			else {
 				onContentFound(*b);
 				b++;
