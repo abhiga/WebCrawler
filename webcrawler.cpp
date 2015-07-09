@@ -16,7 +16,7 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	printf("%d\n", nInitialURls);
 	for (int i = 0; i < nInitialURls; i++) {
 		_urlArray[i]._url = strdup(initialURLs[i]);
-		//_urlArray[i]._description = "";
+		//_urlArray[i]._description = "empty";
 		_urlToUrlRecord -> insertItem(_urlArray[i]._url, i);
 	}
 	// Update _maxUrls, _headURL and _tailURL
@@ -69,7 +69,6 @@ void WebCrawler::onAnchorFound(char * url){
 		strcat(temp,url);
 		
 	}
-	//previous comment out
 	/*else if((('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) && (strncmp(url,"https://",(strlen("https://"))) !=0) && (strncmp(url,"ftp://",(strlen("ftp://"))) !=0)&& (strncmp(url,"mailto:",(strlen("mailto:"))) !=0)) {
 		strcpy(temp, _urlArray[_headURL]._url);
 		for(int i = strlen(temp)-1; i > 8; i--) {
@@ -137,7 +136,7 @@ void WebCrawler::crawl()
 	}
 	for(int i = 0; i < _tailURL;i++) {
 			printf("%s\n", _urlArray[i]._url);
-			//printf("%s\n", _urlArray[i]._description);
+			printf("%s\n", _urlArray[i]._description);
 		}
 }
 
