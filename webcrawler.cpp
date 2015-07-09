@@ -115,7 +115,7 @@ void WebCrawler::crawl()
 		
 		//If the document is not text/html 
 		if(buffer == NULL) {
-			//_headURL++;
+			_headURL++;
 			continue;
 		}
 		parse(buffer,n);
