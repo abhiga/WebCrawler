@@ -113,7 +113,7 @@ openhttp( const char * url, char * contentType )
 	char document[MaxURLLength];
 	int err = parseURL( url, host, &port, document);
 	if ( err ) {
-		fprintf( stderr, "bad url \"%s\"\n", url );
+		fprintf( stderr, "bad url \"%s\"", url );
 		return NULL;
 	}
 	
