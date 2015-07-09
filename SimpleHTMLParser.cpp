@@ -96,6 +96,10 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			if (match(&b,"\" />")) {
 				state = START;
 				//onContentFound('*');
+			}
+			else if(match(&b,">")) {
+				state = START;
+				//onContentFound('*');
 			}			
 			else {
 				onContentFound(*b);
