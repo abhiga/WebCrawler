@@ -49,19 +49,19 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			}
 			else if (match(&b,"<TITLE>")) {
 				state = TITLE;
-				if(l!=0)
+				//if(l!=0)
 					onContentFound(' ');
 				l++;
 			}
 			else if (match(&b,"<META NAME=\"keywords\" content=\"")) {
 				state = METAKEY;
-				if(l!=0)
+				//if(l!=0)
 					onContentFound(' ');
 				l++;
 			}
 			else if (match(&b,"<META NAME=\"description\" content=\"")) {
 				state = METAKEY;
-				if(l!=0)
+				//if(l!=0)
 					onContentFound(' ');
 				l++;
 			}
@@ -98,7 +98,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		
 		case META: {
 			if (match(&b, "\" name=\"description\"")||match(&b, "\" name=\"keywords\"")) {
-				if(l!=0)
+				//if(l!=0)
 					onContentFound(' ');
 				for(int i = 0; i < 400; i++) {
 					if(c[i]==0) 
