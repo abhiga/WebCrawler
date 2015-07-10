@@ -87,21 +87,32 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		
 		case META: {
 			if (match(&b, "name=\"description\"")||match(&b, "name=\"keywords\"")) {
-				
 				for(int i = 0; i < 400; i++) {
 					if(c[i]==0) 
 						break;
-					else 
+					else
 						onContentFound(c[i]);
+
 				}
 				state = START;
 			}
 			else if (match(&b,">")) {
 				state = START;
-				//onContentFound('*');
 			}			
 			else {
-				c[coun++] = *b;
+				char d = *b;
+				//Substitute one or more blank chars with a single space
+				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+				if (!(('a'<= d && d <= 'z') || ('A' <= d && d <= 'Z'))) {
+					if (!lastCharSpace) {
+						c[coun++] = ' ';
+					}
+					lastCharSpace = true;
+				}
+				else {
+					c[coun++] = *b;
+					lastCharSpace = false;
+				}
 				b++;
 			}
 			break;
