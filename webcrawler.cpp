@@ -39,21 +39,7 @@ void WebCrawler::onContentFound(char c)
 			//printf("abhiga\n");
 			_urlArray[_headURL]._description = strdup(desc);
 		}
-		//else
-			//_urlArray[_headURL]._description = strdup("null");				
 	}
-/*	
-	temp[0] = c;
-	temp[1] = '\0';
-	if(count == 0) {
-		strcpy(desc, temp);
-		count++;
-	}
-	else {
-		strcat(desc, temp);
-		count++;
-	}
-*/	
 }
 void WebCrawler::onAnchorFound(char * url){
 	char *finalurl;	
