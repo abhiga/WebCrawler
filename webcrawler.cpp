@@ -52,7 +52,7 @@ void WebCrawler::onAnchorFound(char * url){
 	else if(strncmp(url,"http://", strlen("http://")) == 0) {
 		strcpy(temp,url);
 	}
-	/*else if(strncmp(url,"//",strlen("//")) == 0) {
+	else if(strncmp(url,"//",strlen("//")) == 0) {
 		strcpy(temp,"http:");
 		strcat(temp,url);
 	}
@@ -66,7 +66,7 @@ void WebCrawler::onAnchorFound(char * url){
 		}
 		strcat(temp,url);
 		
-	}*/
+	}
 	//previous comments
 	/*else if((('a' <= url[0] && url[0] <= 'z')||('A' <= url[0] && url[0] <= 'Z')) && (strncmp(url,"https://",(strlen("https://"))) !=0) && (strncmp(url,"ftp://",(strlen("ftp://"))) !=0)&& (strncmp(url,"mailto:",(strlen("mailto:"))) !=0)) {
 		strcpy(temp, _urlArray[_headURL]._url);
