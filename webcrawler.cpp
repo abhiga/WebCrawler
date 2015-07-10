@@ -1,7 +1,7 @@
 
 #include "webcrawler.h"
 #include "SimpleHTMLParser.h"
-int e = 1;
+int e = 0;
 char *desc = (char*)malloc(10000*sizeof(char));
 char * temp = (char*) malloc(2*sizeof(char));
 int count = 0;
