@@ -4,6 +4,7 @@
 #include <string.h>
 //int count = 0;
 char *c = new char[400];
+int coun;
 SimpleHTMLParser::SimpleHTMLParser()
 {
 }
@@ -55,6 +56,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				state = METAKEY;
 			}
 			else if (match(&b,"<META CONTENT=\"")) {
+				memset(c,0,400*sizeof(char));
+				coun = 0;
 				state = META;
 			}
 			else if (match(&b,"</HEAD>")) {
@@ -83,17 +86,13 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 		case META: {
-			memset(c,0,400*sizeof(char));
-			int count = 0;
 			if (match(&b, "name=\"description\"")||match(&b, "name=\"keywords\"")) {
 				
 				for(int i = 0; i < 400; i++) {
-					if(c[i]!=0) {
-						printf("%c",c[i]);
-						onContentFound(c[i]);
-					}
-					else 
+					if(c[i]==0) 
 						break;
+					else 
+						onContentFound(c[i]);
 				}
 				state = START;
 			}
@@ -102,7 +101,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				//onContentFound('*');
 			}			
 			else {
-				c[count++] = *b;
+				c[coun++] = *b;
 				b++;
 			}
 			break;
