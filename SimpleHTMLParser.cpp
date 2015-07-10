@@ -46,6 +46,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				state = FRAME;
 			}
 			else if (match(&b,"<TITLE>")) {
+				printf("abhiga\n");
 				state = TITLE;
 			}
 			else if (match(&b,"<META NAME=\"keywords\" content=\"")) {
@@ -83,7 +84,6 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 		case META: {
-			printf("abhiga\n");
 			memset(c,0,400*sizeof(char));
 			int count = 0;
 			if (match(&b, "name=\"description\"")||match(&b, "name=\"keywords\"")) {
