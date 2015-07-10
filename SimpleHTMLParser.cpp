@@ -71,6 +71,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				state = META;
 			}
 			else if (match(&b,"</HEAD>")) {
+				l = 0;
 				onContentFound('*');
 			}
 			else if	(match(&b,"<")) {
