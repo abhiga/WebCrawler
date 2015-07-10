@@ -3,6 +3,7 @@
 #include "openhttp.h"
 #include <string.h>
 //int count = 0;
+char *c = new char[400];
 SimpleHTMLParser::SimpleHTMLParser()
 {
 }
@@ -53,9 +54,9 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else if (match(&b,"<META NAME=\"description\" content=\"")) {
 				state = METAKEY;
 			}
-			//else if (match(&b,"<META CONTENT=\"")) {
-				//state = META;
-			//}
+			else if (match(&b,"<META CONTENT=\"")) {
+				state = META;
+			}
 			else if (match(&b,"</HEAD>")) {
 				onContentFound('*');
 			}
@@ -82,25 +83,23 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 		case META: {
-			if (match(&b,">")) {
+			memset(c,0,400*sizeof(char));
+			int count = 0;
+			if (match(&b, "name=\"description\"")||match(&b, "name=\"keywords\"")) {
+				for(int i = 0; i < 400; i++) {
+					if(c[i]!=0) 
+						onContentFound(c[i]);
+					else 
+						break;
+				}
+				state = START;
+			}
+			else if (match(&b,">")) {
 				state = START;
 				//onContentFound('*');
 			}			
 			else {
-				char c = *b;
-				//Substitute one or more blank chars with a single space
-				//if (c=='\n'||c=='\r'||c=='\t'||c==' '||) {
-				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
-					if (!lastCharSpace) {
-						onContentFound(' ');
-					}
-					lastCharSpace = true;
-				}
-				else {
-					onContentFound(c);
-					lastCharSpace = false;
-				}
-				
+				c[count++] = *b;
 				b++;
 			}
 			break;
