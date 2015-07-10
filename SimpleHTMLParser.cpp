@@ -115,7 +115,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				char d = *b;
 				//Substitute one or more blank chars with a single space
 				//if (d=='\n'||d=='\r'||d=='\t'||d==' ') {
-				if (!(('a'<= d && d <= 'z') || ('A' <= d && d <= 'Z'))) {
+				if (!(('a'<= d && d <= 'z') || ('A' <= d && d <= 'Z') || ('0' <= d && d <= '9'))) {
 					if (!lastCharSpace) {
 						c[coun++] = ' ';
 					}
@@ -158,7 +158,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				char c = *b;
 				//Substitute one or more blank chars with a single space
 				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
-				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
+				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '0'))) {
 					if (!lastCharSpace) {
 						onContentFound(' ');
 					}
@@ -182,7 +182,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 				char c = *b;
 				//Substitute one or more blank chars with a single space
 				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
-				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
+				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9'))) {
 					if (!lastCharSpace) {
 						onContentFound(' ');
 					}
