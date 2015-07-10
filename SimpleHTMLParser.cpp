@@ -133,8 +133,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else {
 				char c = *b;
 				//Substitute one or more blank chars with a single space
-				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
-				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
+				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+				//if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
 					if (!lastCharSpace) {
 						onContentFound(' ');
 					}
