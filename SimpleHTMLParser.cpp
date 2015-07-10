@@ -86,7 +86,7 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 		case META: {
-			if (match(&b, "name=\"description\"")||match(&b, "name=\"keywords\"")) {
+			if (match(&b, "\" name=\"description\"")||match(&b, "\" name=\"keywords\"")) {
 				for(int i = 0; i < 400; i++) {
 					if(c[i]==0) 
 						break;
@@ -102,8 +102,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else {
 				char d = *b;
 				//Substitute one or more blank chars with a single space
-				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
-				if (!(('a'<= d && d <= 'z') || ('A' <= d && d <= 'Z'))) {
+				if (d=='\n'||d=='\r'||d=='\t'||d==' ') {
+				//if (!(('a'<= d && d <= 'z') || ('A' <= d && d <= 'Z'))) {
 					if (!lastCharSpace) {
 						c[coun++] = ' ';
 					}
@@ -145,8 +145,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else {
 				char c = *b;
 				//Substitute one or more blank chars with a single space
-				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
-				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
+				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+				//if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
 					if (!lastCharSpace) {
 						onContentFound(' ');
 					}
@@ -169,8 +169,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			else {
 				char c = *b;
 				//Substitute one or more blank chars with a single space
-				//if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
-				if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
+				if (c=='\n'||c=='\r'||c=='\t'||c==' ') {
+				//if (!(('a'<= c && c <= 'z') || ('A' <= c && c <= 'Z'))) {
 					if (!lastCharSpace) {
 						onContentFound(' ');
 					}
