@@ -1,7 +1,7 @@
 
 #include "webcrawler.h"
 #include "SimpleHTMLParser.h"
-int e = 0;
+int e = 1;
 char *desc = (char*)malloc(10000*sizeof(char));
 char * temp = (char*) malloc(2*sizeof(char));
 int count = 0;
@@ -25,6 +25,17 @@ WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs
 	_tailURL = nInitialURls;
 	
 }
+void WebCrawler::writeURLFile(const char * urlFileName){
+	remove(urlFileName);
+	FILE *fd = fopen(urlFileName, "a");
+	for(int i = 0; i < _tailURL;i++) {
+			fprintf(fd, "%d ",e++);
+			fprintf(fd, "%s\n", _urlArray[i]._url);
+			fprintf(fd, "%s\n", _urlArray[i]._description);
+		}
+
+}
+
 void WebCrawler::onContentFound(char c)
 { 	//printf("%c",c);
 	if(c != '*'){
@@ -133,11 +144,11 @@ void WebCrawler::crawl()
 		//while
 		//}
 	}
-	for(int i = 0; i < _tailURL;i++) {
-			printf("%d\n",e);
+	/*for(int i = 0; i < _tailURL;i++) {
+			printf("%d\n",e++);
 			printf("%s\n", _urlArray[i]._url);
 			printf("%s\n", _urlArray[i]._description);
-		}
+		}*/
 }
 
 int main (int argc, char** argv) {
@@ -165,6 +176,7 @@ int main (int argc, char** argv) {
 		}
 		WebCrawler *w = new WebCrawler(maxURLs+1,count,initialURLs);
 		w -> crawl();
+		w -> writeURLFile("url.txt");
 	}
 	return 0;
 }
