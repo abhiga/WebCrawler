@@ -83,10 +83,10 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		}
 		
 		case META: {
-				printf("abhiga\n");
 			memset(c,0,400*sizeof(char));
 			int count = 0;
 			if (match(&b, "name=\"description\"")||match(&b, "name=\"keywords\"")) {
+					printf("abhiga\n");
 				for(int i = 0; i < 400; i++) {
 					if(c[i]!=0) 
 						onContentFound(c[i]);
