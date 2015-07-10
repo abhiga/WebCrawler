@@ -1,7 +1,7 @@
 
 #include "webcrawler.h"
 #include "SimpleHTMLParser.h"
-
+int e = 0;
 char *desc = (char*)malloc(10000*sizeof(char));
 char * temp = (char*) malloc(2*sizeof(char));
 int count = 0;
@@ -134,6 +134,7 @@ void WebCrawler::crawl()
 		//}
 	}
 	for(int i = 0; i < _tailURL;i++) {
+			printf("%d\n",e);
 			printf("%s\n", _urlArray[i]._url);
 			printf("%s\n", _urlArray[i]._description);
 		}
