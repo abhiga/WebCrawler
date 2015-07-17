@@ -60,7 +60,7 @@ void WebCrawler::onAnchorFound(char * url){
 	if(_tailURL >= _maxUrls)
 		return;
 	//check if the absolute URL starts with http
-	else if(strncmp(url,"http", strlen("http")) == 0) {
+	else if(strncmp(url,"http://", strlen("http://")) == 0) {
 		strcpy(temp,url);
 	}
 	else if(strncmp(url,"//",strlen("//")) == 0) {
