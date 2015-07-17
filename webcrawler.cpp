@@ -174,7 +174,7 @@ int main (int argc, char** argv) {
 				count++;
 			}
 		}
-		WebCrawler *w = new WebCrawler(maxURLs+1,count,initialURLs);
+		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
 		w -> crawl();
 		w -> writeURLFile("url.txt");
 	}
