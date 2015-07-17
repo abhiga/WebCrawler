@@ -101,7 +101,7 @@ void WebCrawler::onAnchorFound(char * url){
 				break;
 			}
 		}
-		if(flag && strcmp(finalurl,"")) {
+		if(flag) {
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
 			_urlArray[_tailURL]._description = "";
