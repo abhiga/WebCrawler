@@ -101,7 +101,7 @@ void WebCrawler::onAnchorFound(char * url){
 				break;
 			}
 		}
-		if(flag) {
+		if(flag && strcmp(finalurl,"")) {
 			//inserting this absolute URL
 			_urlArray[_tailURL]._url = finalurl;
 			_urlArray[_tailURL]._description = "";
@@ -174,7 +174,7 @@ int main (int argc, char** argv) {
 				count++;
 			}
 		}
-		WebCrawler *w = new WebCrawler(maxURLs+1,count,initialURLs);
+		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
 		w -> crawl();
 		w -> writeURLFile("url.txt");
 	}
