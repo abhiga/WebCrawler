@@ -68,7 +68,8 @@ void WebCrawler::onContentFound(char c)
 			getWord[ccount] = '\0';
 			word = strdup(getWord);
 			ccount = 0;
-			URLRecordList *prev = NULL;        
+			URLRecordList *prev = NULL;    
+			if (!strcmp(word,"")) {    
         	if (_wordToURLRecordList->find(word, &prev) == false)
         	{
             	URLRecordList *e = new URLRecordList();
@@ -83,7 +84,7 @@ void WebCrawler::onContentFound(char c)
             	e -> _next = prev;
             
             	_wordToURLRecordList->insertItem(word, e);
-        	}		
+        	}}		
 		}
 	}
 	else {
