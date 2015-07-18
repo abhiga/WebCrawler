@@ -38,6 +38,21 @@ void WebCrawler::writeURLFile(const char * urlFileName){
 
 }
 
+void WebCrawler::writeWordFile(const char *wordFileName) {
+	HashTableTemplateIterator<URLRecordList*> iterator(_wordToURLRecordList);
+	const char *key;
+	URLRecordList *e;
+	while (iterator.next(key, e)) {
+    	printf("%s ",key);
+		while(e!= NULL) {
+			printf("%d ", e-> _urlRecordIndex);
+			e = e -> _next;
+		}
+		printf("\n"); 
+    
+  }
+
+}
 void WebCrawler::onContentFound(char c)
 { 	//printf("%c",c);
 	if(c != '*'){
@@ -203,6 +218,7 @@ int main (int argc, char** argv) {
 		WebCrawler *w = new WebCrawler(maxURLs,count,initialURLs);
 		w -> crawl();
 		w -> writeURLFile("url.txt");
+		w -> writeWordFile("abc.txt");
 	}
 	return 0;
 }
