@@ -58,7 +58,7 @@ void WebCrawler::writeWordFile(const char *wordFileName) {
 void WebCrawler::onContentFound(char c)
 { 	
 	if ('A' <= c && c <= 'Z')
-		c + 32;
+		c = c + 32;
 	if(c != '*'){
 		desc[count] = c;
 		count++;
