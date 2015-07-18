@@ -80,11 +80,21 @@ void WebCrawler::onContentFound(char c)
             	_wordToURLRecordList->insertItem(word, e);
         	}
         	else
-        	{
-            	URLRecordList *e = new URLRecordList();
-            	e -> _urlRecordIndex = _headURL;
-            	e -> _next = prev;
-            
+        	{	
+				int flag = 0;
+				URLRecordList *tmp = prev;
+				while (tmp!=NULL) {
+					if(tmp -> _urlRecordIndex == _headURL) {
+						flag = 1;						
+						break;
+					}
+				}
+					if (flag == 0) {
+            			URLRecordList *e = new URLRecordList();
+            			e -> _urlRecordIndex = _headURL;
+            			e -> _next = prev;
+            		}
+				}
             	_wordToURLRecordList->insertItem(word, e);
         	}}		
 		}
