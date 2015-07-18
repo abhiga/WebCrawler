@@ -69,7 +69,7 @@ void WebCrawler::onContentFound(char c)
 			word = strdup(getWord);
 			ccount = 0;
 			URLRecordList *prev = NULL;    
-			if (!strcmp(word,"")) {    
+			if (strcmp(word,"")) {    
         	if (_wordToURLRecordList->find(word, &prev) == false)
         	{
             	URLRecordList *e = new URLRecordList();
