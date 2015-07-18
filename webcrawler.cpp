@@ -3,7 +3,7 @@
 #include "SimpleHTMLParser.h"
 int e = 0;
 char *desc = (char*)malloc(10000*sizeof(char));
-char * temp = (char*) malloc(2*sizeof(char));
+char * getWord;
 int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
