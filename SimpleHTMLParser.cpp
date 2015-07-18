@@ -4,6 +4,7 @@
 #include <string.h>
 //int count = 0;
 char *c = new char[400];
+int l = 0;
 int coun;
 SimpleHTMLParser::SimpleHTMLParser()
 {
@@ -22,7 +23,6 @@ SimpleHTMLParser::match(char **b, const char *m) {
 bool
 SimpleHTMLParser::parse(char * buffer, int n)
 {
-	int l = 0;
 	enum { START, TAG, SCRIPT, ANCHOR, HREF,
 	       COMMENT, FRAME, SRC, TITLE, META, METAKEY, METADESC } state;
 
@@ -49,21 +49,21 @@ SimpleHTMLParser::parse(char * buffer, int n)
 			}
 			else if (match(&b,"<TITLE>")) {
 				state = TITLE;
-				if(l==1)
+				//if(l!=0)
 					onContentFound(' ');
-				l = 1;
+				l++;
 			}
 			else if (match(&b,"<META NAME=\"keywords\" content=\"")) {
 				state = METAKEY;
-				if(l==1)
+				//if(l!=0)
 					onContentFound(' ');
-				l = 1;
+				l++;
 			}
 			else if (match(&b,"<META NAME=\"description\" content=\"")) {
 				state = METAKEY;
-				if(l==1)
+				//if(l!=0)
 					onContentFound(' ');
-				l = 1;
+				l++;
 			}
 			else if (match(&b,"<META CONTENT=\"")) {
 				memset(c,0,400*sizeof(char));
@@ -98,9 +98,8 @@ SimpleHTMLParser::parse(char * buffer, int n)
 		
 		case META: {
 			if (match(&b, "\" name=\"description\"")||match(&b, "\" name=\"keywords\"")) {
-				if(l==1)
+				//if(l!=0)
 					onContentFound(' ');
-				l = 1;
 				for(int i = 0; i < 400; i++) {
 					if(c[i]==0) 
 						break;
