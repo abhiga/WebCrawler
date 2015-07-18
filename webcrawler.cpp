@@ -3,7 +3,8 @@
 #include "SimpleHTMLParser.h"
 int e = 0;
 char *desc = (char*)malloc(10000*sizeof(char));
-char * getWord;
+char * getWord = new char[20];
+int ccount=0;
 int count = 0;
 // Add your implementation here
 WebCrawler::WebCrawler(int maxUrls, int nInitialURls,  const char ** initialURLs)
@@ -41,7 +42,30 @@ void WebCrawler::onContentFound(char c)
 	if(c != '*'){
 		desc[count] = c;
 		count++;
-		
+		if(c!= '\t' && c!=' ' && c!= '\n' && c!= '\0') {
+			getWord[ccount] = c;
+			ccount++;
+		}		
+		else {
+			getWord[ccount] = '\0';
+			ccount = 0;
+			URLRecordList *prev = NULL;        
+        	if (_wordToURLRecordList->find(getWord, &prev) == false)
+        	{
+            	URLRecordList *e = new URLRecordList();
+            	e -> _urlRecordIndex = _headURL;
+            	e -> _next = NULL;
+            	_wordToURLRecordList->insertItem(getWord, e);
+        	}
+        	else
+        	{
+            	URLRecordList *e = new URLRecordList();
+            	e -> _urlRecordIndex = _headURL;
+            	e -> _next = prev;
+            
+            	_wordToURLRecordList->insertItem(getWord, e);
+        	}		
+		}
 	}
 	else {
 		desc[count] = '\0';
