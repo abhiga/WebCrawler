@@ -88,6 +88,7 @@ void WebCrawler::onContentFound(char c)
 						flag = 1;						
 						break;
 					}
+				tmp = tmp -> _next;
 				}
 					if (flag == 0) {
             			URLRecordList *e = new URLRecordList();
