@@ -93,10 +93,9 @@ void WebCrawler::onContentFound(char c)
             			URLRecordList *e = new URLRecordList();
             			e -> _urlRecordIndex = _headURL;
             			e -> _next = prev;
+						_wordToURLRecordList->insertItem(word, e);
             		}
-				}
-            	_wordToURLRecordList->insertItem(word, e);
-        	}}		
+				}}		
 		}
 	}
 	else {
