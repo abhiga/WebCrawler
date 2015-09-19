@@ -1,0 +1,395 @@
+0 44 36 19 18 17 
+a 36 19 18 16 
+s 47 42 30 29 19 11 0 
+u 25 
+x 36 19 18 17 
+301 45 41 33 25 10 5 4 3 2 1 
+302 49 46 32 31 
+an 19 18 
+do 17 
+as 18 
+at 47 27 13 
+of 47 42 40 34 30 29 19 18 17 16 15 14 0 
+in 47 42 19 18 17 15 0 
+is 47 42 0 
+on 30 29 23 17 
+it 47 19 0 
+to 42 36 35 30 29 19 18 12 
+pt 30 29 
+up 18 
+us 9 
+x7c 36 19 18 17 
+mbb 30 29 
+and 47 42 40 34 30 29 19 17 15 0 
+pac 30 29 
+act 18 
+all 30 29 19 17 
+red 30 29 
+amp 30 29 
+com 30 29 
+men 30 29 
+the 47 42 40 30 29 19 18 0 
+few 42 
+san 19 
+one 47 42 19 18 0 
+law 35 
+may 19 
+for 18 7 6 
+new 30 29 
+ray 18 
+say 19 16 
+sex 15 
+its 11 
+swg 30 29 
+sls 35 
+top 30 29 
+ltw 30 29 
+two 18 
+ncaa 30 29 
+area 42 
+fame 30 29 
+care 42 
+page 19 17 
+deep 13 
+gene 19 
+camp 30 29 
+hall 30 29 
+buck 30 29 
+like 18 
+club 30 29 
+khoe 19 
+digs 13 
+golf 30 29 
+home 36 30 29 
+help 18 
+math 17 
+book 30 29 
+meet 30 29 
+kids 17 
+than 17 
+palo 47 
+info 30 29 
+fast 30 29 
+walk 30 29 
+item 19 17 
+alto 47 
+none 30 29 
+live 30 29 
+join 18 
+that 18 
+year 17 
+when 18 
+olds 17 
+such 19 
+gray 17 
+what 30 29 
+some 19 
+from 20 19 18 
+site 30 29 14 
+risk 19 
+polo 30 29 
+they 18 
+into 13 
+with 36 
+news 30 29 23 20 19 18 17 9 
+only 42 
+work 12 
+beach 30 29 
+cagan 30 29 
+media 30 29 
+field 30 29 
+break 30 29 
+leads 19 
+block 30 29 
+brain 18 17 
+guide 30 29 
+taube 30 29 
+facts 44 30 29 
+safer 19 
+audio 30 29 
+genes 19 
+camps 30 29 
+finds 17 
+earth 11 
+staff 30 29 7 
+track 30 29 
+class 36 
+video 30 29 
+could 18 
+laser 18 
+scans 17 
+human 36 13 
+smile 16 
+clips 30 29 
+about 30 29 9 
+moved 45 41 33 25 10 5 4 3 2 1 
+found 47 33 32 18 
+their 17 
+rodin 12 
+quick 30 29 
+marks 11 
+skill 17 
+times 30 29 
+donor 30 29 
+event 30 29 28 
+water 30 29 
+drugs 18 
+women 30 29 
+urges 15 
+avery 30 29 
+guest 30 29 
+first 19 
+world 47 36 0 
+opolo 30 29 
+rugby 30 29 
+lower 19 
+front 19 17 
+cross 30 29 
+known 19 
+press 19 17 
+super 30 29 
+stats 30 29 
+tests 17 
+study 17 
+rsquo 19 17 
+decade 30 29 
+change 19 
+demand 30 29 
+garden 12 
+gender 15 
+health 42 36 
+lucile 42 
+spaces 40 
+record 30 29 
+soccer 30 29 
+diving 30 29 
+center 30 29 19 18 17 
+awards 30 29 
+family 30 29 
+maples 30 29 
+hockey 30 29 
+online 44 
+people 40 19 
+better 17 
+alumni 9 
+target 19 
+school 36 34 14 
+likely 19 
+immune 19 
+slight 18 
+matter 17 
+latest 8 
+scores 30 29 
+tennis 30 29 
+skills 17 
+sunken 30 29 
+squash 30 29 
+events 30 29 28 
+rowing 30 29 
+unique 19 
+neuron 18 
+itunes 23 
+volume 17 
+summer 30 29 
+boosts 16 
+photos 30 29 
+roster 30 29 
+system 19 
+sports 30 29 
+medical 36 
+advance 36 
+leading 47 0 
+chances 16 
+packard 42 
+coaches 30 29 
+gameday 30 29 
+fencing 30 29 
+diamond 30 29 
+imaging 17 
+located 47 0 
+calcium 18 
+release 18 
+archive 30 29 
+classic 30 29 
+legends 30 29 
+alumnae 30 29 
+clinics 30 29 
+athlete 30 29 
+fanfest 30 29 
+sailing 30 29 
+aquatic 30 29 
+branner 11 
+central 30 29 
+between 17 
+seating 30 29 
+welcome 35 
+pricing 30 29 
+parking 30 29 
+example 19 
+feature 18 
+scholar 30 29 13 
+hazards 19 
+another 19 18 
+several 17 
+getting 16 
+gateway 7 6 
+premier 36 
+scoring 30 29 
+library 11 
+stadium 30 29 
+tickets 30 29 
+regions 17 
+faculty 7 
+numbers 30 29 
+parents 8 
+recruit 30 29 
+society 30 29 
+spikers 30 29 
+protein 18 
+current 20 
+gunshot 18 
+request 30 29 
+network 42 
+unusual 19 
+results 30 29 
+history 30 29 13 
+twitter 30 29 
+country 42 30 29 
+support 30 29 
+surveys 16 
+baseball 30 29 
+facebook 30 29 
+calendar 28 
+coaching 30 29 
+official 30 29 
+cardinal 30 29 
+medicine 37 36 30 29 20 19 18 
+teaching 47 0 
+homepage 17 
+children 42 
+increase 18 
+schedule 30 29 
+sciences 34 11 
+research 47 0 
+athletic 30 29 
+learning 17 
+featured 28 19 17 
+standard 17 
+genetics 19 
+football 30 29 
+facility 30 29 
+archives 30 29 
+national 30 29 
+molecule 19 
+softball 30 29 
+forecast 17 
+policies 40 
+anderson 27 
+lacrosse 30 29 
+rankings 30 29 
+discover 40 
+stanford 47 44 43 42 40 38 37 36 35 34 30 29 28 27 23 20 19 18 17 16 15 14 13 12 11 9 8 7 6 0 
+pavilion 30 29 
+hospital 42 
+services 40 
+receptor 19 
+transfer 30 29 
+bloopers 30 29 
+switches 19 
+programs 38 
+swimming 30 29 
+preserve 12 
+olympics 30 29 
+recruits 30 29 
+mutation 19 
+students 6 
+priority 30 29 
+dedicated 42 
+headlines 30 29 
+americans 30 29 
+pediatric 42 
+designing 18 
+amplifier 18 
+libraries 41 40 
+neolithic 13 
+schedules 30 29 
+athletics 30 29 
+champions 30 29 
+ticketing 30 29 
+microloan 16 
+instagram 30 29 
+admission 47 
+pregnancy 19 
+stanfordh 30 29 
+boathouse 30 29 
+standings 30 29 
+obstetric 42 
+disorders 18 
+relations 30 29 
+directory 30 29 
+hospitals 36 
+resources 40 
+olympians 30 29 
+wrestling 30 29 
+community 30 29 
+sculpture 12 
+basketball 30 29 
+california 47 0 
+facilities 30 29 
+management 30 29 
+centennial 11 
+pediatrics 17 
+individual 30 29 
+collection 27 
+triggering 18 
+rethinking 15 
+integrates 36 
+volleyball 30 29 
+humanities 34 
+gostanford 30 29 
+recruiting 30 29 
+experiment 18 
+gymnastics 30 29 
+scientists 18 
+transcript 30 29 
+statistics 30 29 
+exclusives 30 29 
+postseason 30 29 
+promotions 30 29 
+university 47 44 40 38 30 29 28 20 8 7 0 
+structures 18 
+engineering 15 14 
+pregnancies 19 
+performance 17 
+researchers 19 
+stanfordbsb 30 29 
+stanfordwbb 30 29 
+association 10 
+development 30 29 
+connections 17 
+information 30 29 
+departments 37 
+acquisition 17 
+sociologist 15 
+permanently 46 42 34 27 11 6 5 4 3 2 
+stanfordmwp 30 29 
+exclusively 42 
+neuroscience 18 17 
+headquarters 30 29 
+registration 30 29 
+synchronized 30 29 
+introduction 44 
+conservators 12 
+institutions 47 0 
+undergraduate 47 
+championships 30 29 
+concentration 18 
+questionnaire 30 29 
+psychologists 17 
+administration 30 29 
+transportation 30 29 
+undergraduation 47 
+stanfordmsoccer 30 29 
+stanfordsynchro 30 29 
+interdisciplinary 38 
+neurotransmitters 18 
