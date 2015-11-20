@@ -1,5 +1,76 @@
-NAME: Abhijeet Gaurav
-LOGIN: agaurav
-Problems: None
-EXTRA FEATURES: 1. Support for relative URLs
-		2. Extract title, descriptions and Keywords from every kind of URLs out there.
+Description:
+A web-crawler is a program that explores the web to build a database that will be used by a search engine. Starting from an initial URL (or a group of initial URL's), the program follows the hyperlinks of these initial documents to reach other documents and so on. The program retrieves the words in the document and links them to the URL of the document for later search. The web-crawler will scan a URL only once by keeping track of the URL's it visits. 
+Parsing the HTML Document
+As we know HTML document are text mixed with tags of the form <...>. The first step for the web crawler when it fetches a document is to strip out the tags and leave the text. Then the HTML text is analyzed for keywords. The second step is to extract the <HREF ...> tags to get what links the document is pointing to.
+
+Here a simple HTML parser SimpleHTMLParser.h and SimpleHTMLParser.cpp that implements a simple finite state automaton that parses document is used.
+
+The HTML parser is implemented as an object of type SimpleHTMLParser. This object has a method parse(char * buffer, int n) that parses the document passed in buffer and that has n bytes. While parsing, parse() calls two call back methods. The method  onContentFound(char c) is called when a character in the text (and not in the tags) is parsed. The method  onAnchorFound(char * url) is called when an <A ref="url" ...> anchor is found. The string url contains the url in the anchor. The way you use this parser is by subclassing the SimpleHTMLParser and then overiding theonContentFound() and onAnchorFound() methods with code to handle the information collected. 
+
+For example, when you type gethttp with the -t option:
+
+gethttp -t http://www.purdue.edu
+
+it will print the text content of that HTML page without the tags. This is done in gethttp.cpp by defining a class  HTMLParserPrintContent that inherits from SimpleHTMLParser. The method 
+onContentFound overides that method from the parent and is defined as follows that prints to stdout each character of the document content.
+
+gethttp -a http://www.purdue.edu
+This is done in gethttp by defining a class HTMLParserPrintHrefs that inherits from SimpleHTMLParser. The method 
+onAnchorFound overides that method from the parent and is defined as follows that prints to stdout the URLs of the links in that document.
+
+Subclass of the SimpleHTMLParser class is used here to implement this web crawler.
+How the SimpleHTML Parser works
+The SimpleHTML parser works by implementing a simple Finite State Machine (FSM). A FSM has "states" represented as circles and "transitions" represented with arrows.  At any point in time the FSM is in one of these states.The machine starts at the START state. Each state has transition arrows coming from them. To transition from the current state to another, a string matching the label in the transition has to be read.
+
+In the SimpleHTMLParser.cpp the FSM is implemented as an infinite loop and each state is implemented as a "case" inside a switch statement. The variable state stores the current state. When in a state, if the current position in the buffer  input matches a string, then it will change the state.
+
+Building a web crawler program.
+The webcrawler program has the following syntax:
+webcrawl [-u <maxurls>] url-list
+Where maxurls  is the maximum number of URLs that will be traversed. By default it is 1000. url-list is the list of starting URL's that will be traversed.
+URL Array (_urlArray)
+The URL array consists of an array of entries of type URLRecord, where each URLRecord, contains two fields: _url is a pointer to the URL and _description is a pointer to a description of the URL. The description of the URL will consist of at most 500 characters of the document without tags (<..>),  escape characters (&x;), and new lines. The size of the _urlArray is _maxUrls taken from the command line.
+ 
+The variable _headURL is the index in the array of the next URL to be requested to be scanned for words. _tailURL is the next entry in the array that is empty. 
+
+URL to URL Record Table (_urlToUrlRecord)
+The URL to URL Record Table maps a URL string to the corresponding index in the _urlArray.
+HashTable template is used here to implement this data structure.
+Word to URLRecord List Table (_wordToURLRecordList)
+This table maps a word to the list of URLs of the documents that contain this word. HashTable template is used in this project to implement this table. 
+
+Web Crawling Procedure used in this project
+The web crawler visits the URLs in a breadth first search manner, that is, it will visit the URLs  in the order they were inserted in the URL array. 
+
+webcrawl Output
+webcrawl will create two files:
+
+url.txt - It will give the list of URLs in the form:
+<url-index><space><url><\n>
+<description without \n's><\n>
+<\n>
+. . .
+One entry for each URL.
+
+Example:
+1 http://www.purdue.edu
+Purdue Main Page
+
+2 http://www.purdue.edu/admisions
+Admisions Homepage
+. . . .
+word.txt - It will give the list of words with the list of url's for each word.
+<word><space><list of URL indexes separated by spaces><\n>
+....
+
+Example:
+CS 3 4 6 7 89
+Purdue 4 6 3 5 7
+....
+One entry for each word
+
+Other Details:
+This program also supports relative URLs.
+To avoid parsing irrelevant data, right now it extracts keywords, i.e. content from TITLE and META tag from the parsed HTML page because I think they are more relevant.
+ 
+
